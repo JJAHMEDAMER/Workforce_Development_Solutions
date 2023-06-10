@@ -1,6 +1,6 @@
 .hero {
-  width: 72.5rem; /* 1160/16 = 72.5*/
-  height: 33rem; /* 528/16*/
+  max-width: 72.5rem; /* 1160/16 = 72.5*/
+  min-height: 33rem; /* 528/16*/
 
   /* top: 5.63/16 = 0.3518 | left and right:51.46/16 = 3.21625 | bottom:30/16= 1.875 */
   padding: 0.7rem 3.21rem 1.875rem;
@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
 
   margin-left: 2.875rem; /*46/16 = 2.875*/
 }
@@ -29,7 +30,7 @@
 }
 
 .hero_para {
-  width: 52.68rem;  /*843/16 = 52.6875*/
+  max-width: 52.68rem; /*843/16 = 52.6875*/
   display: flex;
   flex-direction: column;
   gap: 2.25rem; /* (440-404)/16 USE RULER*/
@@ -41,7 +42,7 @@
 
 .btn {
   height: 3.22rem; /*51.56/16 = 3.2225*/
-  width: 21.75rem; /*348/16 = 21.75*/
+  max-width: 21.75rem; /*348/16 = 21.75*/
   border-radius: 0.526rem; /*8.42/16 = 0.52625*/
   border: none;
   background: #3d3bff;
@@ -52,4 +53,15 @@
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3),
     inset 0px 5px 10px rgb(183, 183, 255, 0.26),
     inset 0px -10px 20px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 420px) {
+  .hero {
+    margin: 1rem; /*46/16 = 2.875*/
+    padding: 1rem;
+  }
+
+  .hero_h1 {
+    font-size: 1.8rem; /* 40/16 = 2.5rem*/
+  }
 }
