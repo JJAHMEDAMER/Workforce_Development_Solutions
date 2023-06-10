@@ -107,7 +107,7 @@ span {
 
 .profile_info> p{
     font-size: 0.51rem; /* 8.19/16 = 0.511875 */
-    margin-bottom: -1rem;
+    text-transform: uppercase;
 }
 
 .profile_info> h1{
@@ -118,5 +118,5 @@ span {
 }
 
 .profile_downarrow{
-
+  margin-left: 0.5rem;
 }
