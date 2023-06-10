@@ -1,12 +1,13 @@
 import './App.css'
 
 // Comp
-import { Background } from "./comp"
+import { Background, Navbar } from "./comp"
 
 function App() {
   return (
     <div>
       <Background />
+      <Navbar />
       <h1>He</h1>
       
     </div>
