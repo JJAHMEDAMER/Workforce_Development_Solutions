@@ -7,13 +7,22 @@
   padding: 0 5.68rem;  /* 91/16 = 5.68rem*/
 
   display: flex;
-  gap: 15px;
   align-items: center;
+  justify-content: space-between;
 }
 
+.nav_left, .nav_right{
+    display: flex;
+    align-items: center;
+    gap: 2.55rem;  /* 40.89 / 16 = 2.555625*/
+}
+
+.nav_left{
+    gap: 0.97rem; /* 15.59/16 = 0.974375*/
+}
+
+
 .logo {
-  text-decoration: none;
-  color: white;
   display: flex;
   align-items: center;
   gap: 10px;
