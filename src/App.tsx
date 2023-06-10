@@ -6,8 +6,9 @@ import { Background } from "./comp"
 function App() {
   return (
     <div>
-      Hello World
       <Background />
+      <h1>He</h1>
+      
     </div>
   )
 }
