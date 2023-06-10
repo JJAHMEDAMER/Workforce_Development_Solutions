@@ -1,0 +1,48 @@
+.hero {
+  width: 72.5rem; /* 1160/16 = 72.5*/
+  height: 33rem; /* 528/16*/
+
+  /* top: 5.63/16 = 0.3518 | left and right:51.46/16 = 3.21625 | bottom:30/16= 1.875 */
+  padding: 0.7rem 3.21rem 1.875rem;
+  border-radius: 1.25rem; /* 20/16 = 1.25 */
+
+  background: rgba(65, 73, 95, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-left: 2rem;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 0.61rem; /* 9.8/16 = 0.6125 */
+  font-size: 0.8rem;
+}
+
+.hero > h1 {
+  font-size: 2.5rem; /* 40/16 = 2.5rem*/
+}
+
+.hero > p {
+  font-size: 0.94rem; /*15.14/16 = 0.94625*/
+}
+
+.btn {
+  height: 3.22rem; /*51.56/16 = 3.2225*/
+  width: 21.75rem; /*348/16 = 21.75*/
+  border-radius: 0.526rem; /*8.42/16 = 0.52625*/
+  border: none;
+  background: #3d3bff;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 5px 10px rgb(183, 183, 255, 0.26);
+  box-shadow: inset 0px -10px 20px rgba(0, 0, 0, 0.6);
+}
