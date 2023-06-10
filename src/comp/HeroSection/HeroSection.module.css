@@ -6,15 +6,15 @@
   padding: 0.7rem 3.21rem 1.875rem;
   border-radius: 1.25rem; /* 20/16 = 1.25 */
 
-  background: rgba(65, 73, 95, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(65, 73, 95, 0.15); /* Opacity -> 0.75 * 0.20 = 0.15*/
+  border: 1px solid rgba(0, 0, 0, 0.15); /* Opacity -> 0.75 * 0.20 = 0.15*/
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05); /* Opacity -> 0.25 * 0.20 = 0.05*/
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  margin-left: 2rem;
+  margin-left: 2.875rem; /*46/16 = 2.875*/
 }
 
 .time {
@@ -42,7 +42,7 @@
   letter-spacing: 2px;
 
   /* offset-x | offset-y | blur-radius | color */
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0px 5px 10px rgb(183, 183, 255, 0.26);
-  box-shadow: inset 0px -10px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3),
+    inset 0px 5px 10px rgb(183, 183, 255, 0.26),
+    inset 0px -10px 20px rgba(0, 0, 0, 0.6);
 }
