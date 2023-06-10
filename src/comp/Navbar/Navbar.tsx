@@ -21,6 +21,18 @@ export const Navbar = () => {
         <li><a href="#">Major Library</a></li>
         <li><a href="#">School Library</a></li>
       </ul>
+
+      <div className={style.profile}>
+        <img className={style.profile_notification} src="./notification.svg" alt="notification" />
+        <img className={style.profile_img} src="./Male_Avatar.jpg" alt="avatar" />
+        <div className={style.profile_info}>
+          <p>Welcome</p>
+          <h1>
+            Name Name
+            <img className={style.profile_downarrow} src="./down_arrow.svg" alt="down_arrow" />
+          </h1>
+        </div>
+      </div>
     </nav>
   )
 }
