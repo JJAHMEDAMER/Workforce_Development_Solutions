@@ -1,15 +1,15 @@
 import './App.css'
 
 // Comp
-import { Background, Navbar } from "./comp"
+import { Background, HeroSection, Navbar } from "./comp"
 
 function App() {
   return (
     <div>
       <Background />
       <Navbar />
-      <h1>He</h1>
-      
+      <HeroSection />
+
     </div>
   )
 }
