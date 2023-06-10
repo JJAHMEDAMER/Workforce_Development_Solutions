@@ -1,0 +1,32 @@
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0.1rem 0.5rem;
+
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo_img {
+  height: 2.43rem; /* 39px / 16 px = 2.43rem */
+}
+
+.logo_text {
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+span {
+  font-weight: 600;
+}
