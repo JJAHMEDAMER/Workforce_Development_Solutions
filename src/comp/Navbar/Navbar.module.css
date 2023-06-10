@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  padding: 0.1rem 0.5rem;
+  height: 6rem;  /* 96/16 = 6rem*/
+  padding: 0 5.68rem;  /* 91/16 = 5.68rem*/
 
   display: flex;
   gap: 15px;
@@ -65,4 +66,11 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;  /* 32 /16 = 2rem*/
 }

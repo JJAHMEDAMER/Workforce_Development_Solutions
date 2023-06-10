@@ -15,6 +15,12 @@ export const Navbar = () => {
           <img src="./search.svg" alt="search" />
         </div>
       </label>
+
+      <ul className={style.nav_list}>
+        <li><a href="#">Career Library</a></li>
+        <li><a href="#">Major Library</a></li>
+        <li><a href="#">School Library</a></li>
+      </ul>
     </nav>
   )
 }
