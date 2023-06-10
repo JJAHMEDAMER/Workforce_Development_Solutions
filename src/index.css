@@ -27,8 +27,15 @@
 
 body {
   display: flex;
-  width: 100vw;
   padding-top: 12rem;
+
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url(./bg_wave.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-color: var(--deep-blue);
 }
 
 a {
