@@ -122,3 +122,29 @@ span {
 .profile_downarrow {
   margin-left: 0.5rem;
 }
+
+@media screen and (max-width: 420px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .search_icon {
+    border-radius: var(--border-radius);
+  }
+
+  .search {
+    width: 6rem;
+  }
+
+  .nav_list,
+  .profile_info,
+  .search,
+  .logo_text {
+    display: none;
+  }
+
+  .nav_right {
+    gap: 1rem;
+  }
+
+}
