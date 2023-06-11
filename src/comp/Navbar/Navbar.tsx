@@ -27,6 +27,7 @@ export const Navbar = () => {
       </div>
 
       <div className={style.nav_right}>
+        <input className={style.hambCheck} type="checkbox" id="side-menu" />
         <ul className={style.nav_list}>
           <li><a href="#">Career Library</a></li>
           <li><a href="#">Major Library</a></li>
@@ -44,6 +45,10 @@ export const Navbar = () => {
             </h1>
           </div>
         </div>
+
+        <label className={style.hamb} htmlFor="side-menu">
+          <span className={style.hambSpan}></span>
+        </label>
       </div>
     </nav>
   )

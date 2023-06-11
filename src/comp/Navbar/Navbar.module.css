@@ -123,6 +123,118 @@ span {
   margin-left: 0.5rem;
 }
 
+.hamb,
+.hambCheck {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav_right {
+    gap: 1rem;
+  }
+
+  .nav_list {
+    display: none;
+  }
+
+  /*Nav List*/
+  .nav_list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1rem;
+    background: var(--deep-blue);
+
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav_list > * {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--blue-gray);
+  }
+
+  /* hamburger Menu */
+
+  .hamb {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hambSpan {
+    --white: white;
+    --width: 32px;
+    --height: 4px;
+    --gap: 9px;
+    --transition: all 0.3s ease-out;
+
+    display: block;
+    background: var(--white);
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    transition: var(--transition);
+  }
+
+  .hambSpan::before,
+  .hambSpan::after {
+    background: var(--white);
+    content: "";
+    display: block;
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    transition: var(--transition);
+  }
+  .hambSpan::before {
+    bottom: var(--gap);
+  }
+  .hambSpan::after {
+    top: var(--gap);
+  }
+
+  .hambCheck {
+    display: none;
+  }
+
+  .hambCheck:checked ~ .hamb .hambSpan::after,
+  .hambCheck:checked ~ .hamb .hambSpan::before {
+    rotate: 45deg;
+    top: 0;
+  }
+
+  .hambCheck:checked ~ .hamb .hambSpan::before {
+    rotate: -45deg;
+  }
+
+  .hambCheck:checked ~ .hamb .hambSpan {
+    background: transparent;
+  }
+
+  .hambCheck:checked ~ .nav_list {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .search {
+    width: 6rem;
+  }
+
+  .nav_list,
+  .logo_text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .nav {
+    padding: 0 1.5rem;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .nav {
     padding: 0 1rem;
@@ -137,14 +249,11 @@ span {
   }
 
   .nav_list,
-  .profile_info,
   .search,
   .logo_text {
     display: none;
   }
-
-  .nav_right {
-    gap: 1rem;
+  .profile_info {
+    display: none;
   }
-
 }
