@@ -29,11 +29,9 @@ export const Navbar = () => {
 
   useEffect(() => {
     const fetchAvatar = async () => {
-      console.log(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
       const resImg = await fetch(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
       const url = URL.createObjectURL(await resImg.blob());
       setUserImg(url)
-      console.log("hhdjdjdj", url)
     }
 
     fetchAvatar()
