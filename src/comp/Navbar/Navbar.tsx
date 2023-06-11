@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import md5 from 'md5';
 import style from "./Navbar.module.css"
 
 type fetchObject = {
@@ -8,18 +9,36 @@ type fetchObject = {
 export const Navbar = () => {
   const [search, setSearch] = useState<Boolean>(false)
   const [user, setUser] = useState<fetchObject>({})
+  const [userImg, setUserImg] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
-      if (!res.ok) {
-        alert(`Failed to fetch user data \n${res.status}:: ${res.statusText}`)
-        throw new Error(`Failed to fetch user data \n${res.status}:: ${res.statusText}`);
+      try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        if (!res.ok) {
+          alert(`Failed to fetch user data \n${res.status}:: ${res.statusText}`)
+          throw new Error(`Failed to fetch user data \n${res.status}:: ${res.statusText}`);
+        }
+        setUser(await res.json())
+      } catch (e) {
+        console.error(`Failed to fetch user data ${e}`)
       }
-      setUser(await res.json())
     }
     fetchUser()
   }, [])
+
+  useEffect(() => {
+    const fetchAvatar = async () => {
+      console.log(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
+      const resImg = await fetch(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
+      const url = URL.createObjectURL(await resImg.blob());
+      setUserImg(url)
+      console.log("hhdjdjdj", url)
+    }
+
+    fetchAvatar()
+  }, [user])
+
 
   return (
     <nav className={style.nav}>
@@ -53,7 +72,7 @@ export const Navbar = () => {
 
         <div className={style.profile}>
           <img className={style.profile_notification} src="./notification.svg" alt="notification" />
-          <img className={style.profile_img} src="./Male_Avatar.jpg" alt="avatar" />
+          <img className={style.profile_img} src={userImg ? userImg : "./Male_Avatar.jpg"} alt="avatar" />
           <div className={style.profile_info}>
             <p>Welcome</p>
             <h1>
