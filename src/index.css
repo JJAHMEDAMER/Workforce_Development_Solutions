@@ -31,7 +31,7 @@ body {
 
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url(./bg_wave.png);
+  background-image: url(../bg_wave.png);
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
