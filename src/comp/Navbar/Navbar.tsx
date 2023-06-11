@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import md5 from 'md5';
 import style from "./Navbar.module.css"
+import { appFetch } from "../../utiles/appFetch";
 
 type fetchObject = {
   [key: string]: string
@@ -13,27 +14,18 @@ export const Navbar = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
-        if (!res.ok) {
-          alert(`Failed to fetch user data \n${res.status}:: ${res.statusText}`)
-          throw new Error(`Failed to fetch user data \n${res.status}:: ${res.statusText}`);
-        }
-        setUser(await res.json())
-      } catch (e) {
-        console.error(`Failed to fetch user data ${e}`)
-      }
+      const res = await appFetch("https://jsonplaceholder.typicode.com/users/1")
+      setUser(await res!.json())
     }
     fetchUser()
   }, [])
 
   useEffect(() => {
     const fetchAvatar = async () => {
-      const resImg = await fetch(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
-      const url = URL.createObjectURL(await resImg.blob());
+      const resImg = await appFetch(`https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}`)
+      const url = URL.createObjectURL(await resImg!.blob());
       setUserImg(url)
     }
-
     fetchAvatar()
   }, [user])
 
