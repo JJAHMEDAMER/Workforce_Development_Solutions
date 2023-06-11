@@ -9,6 +9,8 @@
   background-color: #242424;
 
   --deep-blue: #121826;
+  --blue: #3d3bff;
+  --blue-gray: #41495f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,8 +23,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  /* outline: 1px solid red; */
 }
 
 body {
@@ -47,9 +47,8 @@ ul {
   list-style: none;
 }
 
-
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1024px) {
   body{
-    padding-top: 6rem;
+    padding-top: 5rem;
   }
 }

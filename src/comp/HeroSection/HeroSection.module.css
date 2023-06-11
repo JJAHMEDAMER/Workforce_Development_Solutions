@@ -45,7 +45,7 @@
   max-width: 21.75rem; /*348/16 = 21.75*/
   border-radius: 0.526rem; /*8.42/16 = 0.52625*/
   border: none;
-  background: #3d3bff;
+  background: var(--blue);
   font-weight: 800;
   letter-spacing: 2px;
 
@@ -55,13 +55,27 @@
     inset 0px -10px 20px rgba(0, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1024px) {
   .hero {
-    margin: 1rem; /*46/16 = 2.875*/
-    padding: 1rem;
+    margin: 2.875rem;
+    padding: 3.21rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .hero {
+    margin: 1.5rem; /*46/16 = 2.875*/
+    padding: 1.5rem;
   }
 
   .hero_h1 {
     font-size: 1.8rem; /* 40/16 = 2.5rem*/
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero {
+    margin: 1rem; /*46/16 = 2.875*/
+    padding: 1rem;
   }
 }
