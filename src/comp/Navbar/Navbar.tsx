@@ -1,8 +1,21 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import style from "./Navbar.module.css"
 
+type fetchObject = {
+  [key: string]: string
+}
+
 export const Navbar = () => {
-  const [search, searchState] = useState<Boolean>(false)
+  const [search, setSearch] = useState<Boolean>(false)
+  const [user, setUser] = useState<fetchObject>({})
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+      setUser(await res.json())
+    }
+    fetchUser()
+  }, [])
 
   return (
     <nav className={style.nav}>
@@ -20,7 +33,7 @@ export const Navbar = () => {
           <div
             className={style.search_icon}
             style={search ? { borderRadius: "0 var(--border-radius) var(--border-radius) 0" } : undefined}
-            onClick={() => searchState(!search)}>
+            onClick={() => setSearch(!search)}>
             <img src="./search.svg" alt="search" />
           </div>
         </label>
@@ -40,7 +53,7 @@ export const Navbar = () => {
           <div className={style.profile_info}>
             <p>Welcome</p>
             <h1>
-              Name Name
+              {user.name}
               <img className={style.profile_downarrow} src="./down_arrow.svg" alt="down_arrow" />
             </h1>
           </div>
