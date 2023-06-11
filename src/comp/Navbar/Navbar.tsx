@@ -12,6 +12,10 @@ export const Navbar = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+      if (!res.ok) {
+        alert(`Failed to fetch user data \n${res.status}:: ${res.statusText}`)
+        throw new Error(`Failed to fetch user data \n${res.status}:: ${res.statusText}`);
+      }
       setUser(await res.json())
     }
     fetchUser()
