@@ -41,18 +41,57 @@
 }
 
 .btn {
+  --font-weight: 800;
+  --letter-spacing: 2px;
   height: 3.22rem; /*51.56/16 = 3.2225*/
   max-width: 21.75rem; /*348/16 = 21.75*/
   border-radius: 0.526rem; /*8.42/16 = 0.52625*/
   border: none;
   background: var(--blue);
-  font-weight: 800;
-  letter-spacing: 2px;
+
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
 
   /* offset-x | offset-y | blur-radius | color */
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3),
     inset 0px 5px 10px rgb(183, 183, 255, 0.26),
     inset 0px -10px 20px rgba(0, 0, 0, 0.6);
+
+  cursor: pointer;
+  position: relative;
+}
+
+.btn::before {
+  content: "Enter";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 0.526rem; /*8.42/16 = 0.52625*/
+  border: none;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3),
+    inset 0px 5px 10px rgb(183, 183, 255, 0.26),
+    inset 0px -10px 20px rgba(0, 0, 0, 0.6);
+  background: rgb(58, 79, 180);
+  background: linear-gradient(
+    45deg,
+    rgba(58, 79, 180, 1) 0%,
+    rgba(253, 29, 232, 1) 50%,
+    rgba(13, 231, 203, 1) 100%
+  );
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+.btn:hover::before {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1024px) {
