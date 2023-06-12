@@ -125,12 +125,6 @@
   }
 }
 
-@media screen and (max-width: 850px) {
-  .nav_list {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 550px) {
   .nav {
     padding: 0 1.5rem;
@@ -140,9 +134,5 @@
 @media screen and (max-width: 420px) {
   .nav {
     padding: 0 1rem;
-  }
-
-  .nav_list {
-    display: none;
   }
 }
