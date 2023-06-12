@@ -22,25 +22,6 @@
   gap: 0.97rem; /* 15.59/16 = 0.974375*/
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo_img {
-  height: 2.43rem; /* 39px / 16 px = 2.43rem */
-}
-
-.logo_text {
-  font-weight: 200;
-  font-size: 1.2rem;
-}
-
-span {
-  font-weight: 600;
-}
-
 .search_container {
   --padding: 0 1rem;
   --bg-color: #252a40;
@@ -250,8 +231,7 @@ span {
   }
 
   .nav_list,
-  .search,
-  .logo_text {
+  .search {
     display: none;
   }
   .profile_info {

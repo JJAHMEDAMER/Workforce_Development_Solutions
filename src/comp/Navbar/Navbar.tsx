@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import md5 from 'md5';
 import style from "./Navbar.module.css"
 import { appFetch } from "../../utiles/appFetch";
+import { StudentIncLogo } from "../subComp";
 
 type fetchObject = {
   [key: string]: string
@@ -33,10 +34,7 @@ export const Navbar = () => {
   return (
     <nav className={style.nav}>
       <div className={style.nav_left}>
-        <a className={style.logo} href="#">
-          <img className={style.logo_img} src="./students_inc_logo.svg" alt="students_inc_logo" />
-          <p className={style.logo_text}><span>Students</span> Inc.</p>
-        </a>
+        <StudentIncLogo />
 
         <label htmlFor="search" className={style.search_container}>
           <input
