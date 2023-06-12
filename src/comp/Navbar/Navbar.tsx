@@ -3,13 +3,13 @@ import md5 from 'md5';
 import style from "./Navbar.module.css"
 import { appFetch } from "../../utiles/appFetch";
 import { StudentIncLogo } from "../subComp";
+import { SearchBar } from "../subComp/SearchBar/SearchBar";
 
 type fetchObject = {
   [key: string]: string
 }
 
 export const Navbar = () => {
-  const [search, setSearch] = useState<Boolean>(false)
   const [user, setUser] = useState<fetchObject>({})
   const [userImg, setUserImg] = useState<string | null>(null)
 
@@ -35,19 +35,8 @@ export const Navbar = () => {
     <nav className={style.nav}>
       <div className={style.nav_left}>
         <StudentIncLogo />
+        <SearchBar />
 
-        <label htmlFor="search" className={style.search_container}>
-          <input
-            className={style.search}
-            style={search ? { display: "block" } : undefined}
-            placeholder="Search..." type="text" name="search" id="search" />
-          <div
-            className={style.search_icon}
-            style={search ? { borderRadius: "0 var(--border-radius) var(--border-radius) 0" } : undefined}
-            onClick={() => setSearch(!search)}>
-            <img src="./search.svg" alt="search" />
-          </div>
-        </label>
       </div>
 
       <div className={style.nav_right}>
