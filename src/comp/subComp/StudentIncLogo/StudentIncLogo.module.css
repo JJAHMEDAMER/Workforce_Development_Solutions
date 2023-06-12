@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo_img {
+  height: 2.43rem; /* 39px / 16 px = 2.43rem */
+}
+
+.logo_text {
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+span {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 850px) {
+  .logo_text {
+    display: none;
+  }
+}
