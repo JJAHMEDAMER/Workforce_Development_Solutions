@@ -4,6 +4,7 @@ import style from "./Navbar.module.css"
 import { appFetch } from "../../utiles/appFetch";
 import { StudentIncLogo } from "../subComp";
 import { SearchBar } from "../subComp/SearchBar/SearchBar";
+import { ProfileInfo } from "../subComp/ProfileInfo/ProfileInfo";
 
 type fetchObject = {
   [key: string]: string
@@ -36,7 +37,6 @@ export const Navbar = () => {
       <div className={style.nav_left}>
         <StudentIncLogo />
         <SearchBar />
-
       </div>
 
       <div className={style.nav_right}>
@@ -47,17 +47,7 @@ export const Navbar = () => {
           <li><a href="#">School Library</a></li>
         </ul>
 
-        <div className={style.profile}>
-          <img className={style.profile_notification} src="./notification.svg" alt="notification" />
-          <img className={style.profile_img} src={userImg ? userImg : "./Male_Avatar.jpg"} alt="avatar" />
-          <div className={style.profile_info}>
-            <p>Welcome</p>
-            <h1>
-              {user.name}
-              <img className={style.profile_downarrow} src="./down_arrow.svg" alt="down_arrow" />
-            </h1>
-          </div>
-        </div>
+        <ProfileInfo userName={user.name} userImg={userImg}/>
 
         <label className={style.hamb} htmlFor="side-menu">
           <span className={style.hambSpan}></span>
