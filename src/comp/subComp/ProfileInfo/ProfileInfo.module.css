@@ -1,0 +1,42 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile_notification {
+  height: 1.43rem; /* 23/16 = 1.4375rem*/
+}
+
+.profile_img {
+  width: 2.06rem; /* 33/16 = 2.0625 */
+  height: 2.06rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile_info {
+  color: #adb3cc;
+}
+
+.profile_info > p {
+  font-size: 0.51rem; /* 8.19/16 = 0.511875 */
+  text-transform: uppercase;
+}
+
+.profile_info > h1 {
+  font-size: 0.81rem; /* 13.11/16 = 0.819375 */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.profile_downarrow {
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 420px) {
+  .profile_info {
+    display: none;
+  }
+}
