@@ -1,5 +1,3 @@
-# transparncy
-
 # Instructions
 
 Clone Repo locally
@@ -126,6 +124,11 @@ This was the first time I used the Gravatar service so, I searched on how to use
 - Gravatar Returns JFIF as blob
 - Use `await res.blob()` to return a blob URL `blob:https://....`
 - use the return value in `<img src={"blob:https://..."} `
+
+### Transitions and animations
+Transitions can't be applied on display property, so I used the visibility property to make a smooth transition for the hamburger menu
+
+The transition property doesn't work on the on the linear gradient background, for the button, so I used an opacity of zero on the before element of the button with the gradient as a BG and made a transition to opacity one  
 
 # Finally Questions
 
