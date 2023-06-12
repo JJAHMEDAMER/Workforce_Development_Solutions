@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import md5 from 'md5';
 import style from "./Navbar.module.css"
 import { appFetch } from "../../utiles/appFetch";
-import { StudentIncLogo } from "../subComp";
-import { SearchBar } from "../subComp/SearchBar/SearchBar";
-import { ProfileInfo } from "../subComp/ProfileInfo/ProfileInfo";
+import { StudentIncLogo, SearchBar, ProfileInfo } from "../subComp";
+
 
 type fetchObject = {
   [key: string]: string
@@ -47,11 +46,13 @@ export const Navbar = () => {
           <li><a href="#">School Library</a></li>
         </ul>
 
-        <ProfileInfo userName={user.name} userImg={userImg}/>
-
         <label className={style.hamb} htmlFor="side-menu">
           <span className={style.hambSpan}></span>
         </label>
+
+        <ProfileInfo userName={user.name} userImg={userImg} />
+
+
       </div>
     </nav>
   )
